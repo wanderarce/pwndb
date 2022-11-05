@@ -1,22 +1,23 @@
 {
-  "name": "br.com.wanderarce",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "ejs": "^3.1.8",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^8.5.1",
-    "knex": "^2.3.0",
-    "morgan": "^1.10.0",
-    "pg": "^8.8.0"
-  }
+    "name": "br.com.wanderarce",
+    "version": "1.0.0",
+    "description": "",
+    "main": "node index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node serverex.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "ejs": "^3.1.8",
+        "express": "^4.18.2",
+        "jsonwebtoken": "^8.5.1",
+        "knex": "^2.3.0",
+        "morgan": "^1.10.0",
+        "pg": "^8.8.0"
+    }
 }
