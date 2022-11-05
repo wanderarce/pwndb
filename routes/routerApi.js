@@ -104,7 +104,9 @@ routerApi.put('/produtos/:id', checkToken, isAdmin, function(req, res) {
         'descricao': req.body.descricao,
         'valor': req.body.valor
     }
-    knex('produto').where('id', req.params.id).update(produto, ['id', 'descricao', 'marca', ' valor'])
+    knex('produto')
+        .where('id', req.params.id)
+        .update(produto, ['id', 'descricao', 'marca', ' valor'])
         .then(produtos => {
             if (produtos.length > 0) {
                 res.status(200).json({
