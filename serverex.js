@@ -28,4 +28,5 @@ app.use((req, res) => {
     res.status(404).send("404- Not Found")
 })
 let port = process.env.PORT || 3000
+console.log("Porta: ", port)
 app.listen(port)
