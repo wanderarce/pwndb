@@ -109,7 +109,7 @@ routerApi.put('/produtos/:id', checkToken, isAdmin, function(req, res) {
         .then(produtos => {
             if (produtos.length > 0) {
                 res.status(200).json({
-                    message: "Produto inserido com sucesso",
+                    message: "Produto alterado com sucesso",
                     produto: produtos[0]
                 })
             } else {
