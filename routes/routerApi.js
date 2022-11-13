@@ -45,20 +45,6 @@ const isAdmin = (req, res, next) => {
     }
 }
 
-const produto = (id) => knex.select('*').from('produto')
-    .where({ 'id': id })
-    .then(produtos => {
-        if (produtos.length > 0) {
-            res.status(200).json(produtos[0])
-        } else {
-            res.status(204)
-        }
-    })
-    .catch(err => {
-        res.status(500).json({
-            message: 'Erro ao recuperar produtos - ' + err.message
-        })
-    })
 routerApi.get('/produtos', checkToken, function(req, res) {
     knex.select('*').from('produto')
         .then(produtos => res.status(200).json(produtos))
@@ -69,9 +55,22 @@ routerApi.get('/produtos', checkToken, function(req, res) {
         })
 })
 
-routerApi.get('produtos/:id', checkToken, function(req, res) {
+routerApi.get('/produtos/:id', checkToken, function(req, res) {
     let id = req.params.id
-    produto(id)
+    knex.select('*').from('produto')
+        .where({ 'id': id })
+        .then(produtos => {
+            if (produtos.length > 0) {
+                res.status(200).json(produtos[0])
+            } else {
+                res.status(204)
+            }
+        })
+        .catch(err => {
+            res.status(500).json({
+                message: 'Erro ao recuperar produtos - ' + err.message
+            })
+        })
 })
 routerApi.post('/produtos', checkToken, isAdmin, function(req, res) {
     let produto = {
